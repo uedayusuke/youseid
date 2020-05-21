@@ -30,3 +30,6 @@ YOUSEID!(ユージット!)
 
 ### 機能一覧
 <https://drive.google.com/open?id=1A1Ceocc2CZH8rI5HBQFOK2NO8amF8DbeKfP01_A0oZg>
+
+### 要件定義書
+<https://docs.google.com/document/d/1kbfsQcj0bpmdJSiK-tvOAmk8q-SxBlYHvgk_fP0BgVU/edit?usp=sharing>
