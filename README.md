@@ -35,5 +35,5 @@ YOUSEID!(ユージット!)
 <https://docs.google.com/document/d/1kbfsQcj0bpmdJSiK-tvOAmk8q-SxBlYHvgk_fP0BgVU/edit?usp=sharing>
 
 ### UI Flows
- user
+ user<br>
  <https://drive.google.com/open?id=1XVnF3M_S5o-vJr3mYJPAFQCWrJxcuFK1>
