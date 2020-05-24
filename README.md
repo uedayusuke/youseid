@@ -50,4 +50,7 @@ YOUSEID!(ユーズエイド!)
  
  ### ER図
  日本語<br>
- <https://drive.google.com/open?id=1wliZDafQ2K-kGSm9s7cbm4nA9n9Yu1wb>
+ <https://drive.google.com/open?id=1wliZDafQ2K-kGSm9s7cbm4nA9n9Yu1wb> <br>
+ 
+ 英語<br>
+ <https://drive.google.com/open?id=1x3OaieLHF7BLHowYvVOulzA-KqKyjgOX>
