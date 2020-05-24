@@ -47,3 +47,7 @@ YOUSEID!(ユーズエイド!)
  
  shop<br>
  <https://drive.google.com/open?id=1K2ciGiQy6ZvP1mzKSRKqPvqz2iuKzSXb>
+ 
+ ### ER図
+ 日本語<br>
+ <https://drive.google.com/open?id=1wliZDafQ2K-kGSm9s7cbm4nA9n9Yu1wb>
