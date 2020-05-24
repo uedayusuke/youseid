@@ -54,3 +54,6 @@ YOUSEID!(ユーズエイド!)
  
  英語<br>
  <https://drive.google.com/open?id=1x3OaieLHF7BLHowYvVOulzA-KqKyjgOX>
+ 
+ ### テーブル定義書
+ <https://drive.google.com/open?id=1bwcUQE1MkD3jCId6Ko7jCE89aiaFAwbY>
