@@ -1,4 +1,29 @@
 Rails.application.routes.draw do
+  namespace :public do
+    get 'reservations/finish'
+  end
+  namespace :public do
+    get 'contacts/new'
+    get 'contacts/finish'
+  end
+  namespace :public do
+    get 'bookings/new'
+    get 'bookings/finish'
+  end
+  namespace :public do
+    get 'shops/show'
+  end
+  namespace :public do
+    get 'post_images/index'
+    get 'post_images/show'
+  end
+  namespace :public do
+    get 'users/top'
+    get 'users/about'
+    get 'users/show'
+    get 'users/edit'
+    get 'users/cancel'
+  end
   devise_for :shops, contorollers: {
   	sessions: 'shops/sessions',
   	passwords: 'shops/passwords',
