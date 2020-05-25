@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'post_images/new'
+    get 'post_images/show'
+    get 'post_images/edit'
+  end
+  namespace :admin do
+    get 'bookings/index'
+  end
+  namespace :admin do
+    get 'reservations/index'
+  end
+  namespace :admin do
+    get 'shops/show'
+    get 'shops/edit'
+    get 'shops/cancel'
+  end
   namespace :public do
     get 'reservations/finish'
   end
