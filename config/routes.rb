@@ -1,20 +1,29 @@
 Rails.application.routes.draw do
+  devise_for :shops, contorollers: {
+    sessions: 'shops/sessions',
+    passwords: 'shops/passwords',
+    registrations: 'shops/registrations'
+  }
+  devise_for :users, contorollers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations'
+  }
+
   namespace :admin do
-    get 'post_images/new'
-    get 'post_images/show'
-    get 'post_images/edit'
+    resources :shops, only: [:show, :edit, :update, :destroy] do
+      collection do
+        get 'cancel'
+      end
+    end
+
+    resources :post_images, only: [:new, :create, :show, :edit, :update]
+
+    resources :reservations, only: [:index]
+
+    resources :bookings, only: [:index]
   end
-  namespace :admin do
-    get 'bookings/index'
-  end
-  namespace :admin do
-    get 'reservations/index'
-  end
-  namespace :admin do
-    get 'shops/show'
-    get 'shops/edit'
-    get 'shops/cancel'
-  end
+
   namespace :public do
     get 'reservations/finish'
   end
@@ -40,15 +49,6 @@ Rails.application.routes.draw do
     get 'users/edit'
     get 'users/cancel'
   end
-  devise_for :shops, contorollers: {
-  	sessions: 'shops/sessions',
-  	passwords: 'shops/passwords',
-  	registrations: 'shops/registrations'
-  }
-  devise_for :users, contorollers: {
-  	sessions: 'users/sessions',
-  	passwords: 'users/passwords',
-  	registrations: 'users/registrations'
-  }
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
