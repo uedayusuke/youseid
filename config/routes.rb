@@ -10,8 +10,46 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  #userサイト
+  root 'public/users#top'
+  put '/user' => 'public/users#destroy'
+  scope module: :public do
+    resource :user, only: [:show, :edit, :update] do
+      collection do
+        get 'cancel'
+        get 'about'
+      end
+    end
+
+    resources :post_images, only: [:index, :show] do
+      resource :reservation, only: [:create] do
+        collection do
+          get 'finish'
+        end
+      end
+      resource :comment, only: [:create]
+      resource :fovorite, only: [:create, :destroy]
+    end
+
+    resources :shops, only: [:index, :show]
+
+    resources :bookings, only: [:new, :create] do
+      collection do
+        get 'finish'
+      end
+    end
+
+    resource :contacts, only: [:new, :create] do
+      collection do
+        get 'finish'
+      end
+    end
+  end
+
+  #shopサイト
   namespace :admin do
-    resources :shops, only: [:show, :edit, :update, :destroy] do
+    #idを割り振る必要がないため、単数形resourceに変更(5/26)
+    resource :shop, only: [:show, :edit, :update, :destroy] do
       collection do
         get 'cancel'
       end
@@ -22,32 +60,6 @@ Rails.application.routes.draw do
     resources :reservations, only: [:index]
 
     resources :bookings, only: [:index]
-  end
-
-  namespace :public do
-    get 'reservations/finish'
-  end
-  namespace :public do
-    get 'contacts/new'
-    get 'contacts/finish'
-  end
-  namespace :public do
-    get 'bookings/new'
-    get 'bookings/finish'
-  end
-  namespace :public do
-    get 'shops/show'
-  end
-  namespace :public do
-    get 'post_images/index'
-    get 'post_images/show'
-  end
-  namespace :public do
-    get 'users/top'
-    get 'users/about'
-    get 'users/show'
-    get 'users/edit'
-    get 'users/cancel'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
