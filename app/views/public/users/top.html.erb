@@ -1,2 +1,54 @@
-<h1>Public::Users#top</h1>
-<p>Find me in app/views/public/users/top.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6 box">
+      <div class="row">
+        <div class="col-5 title-box">
+          <h1>YOUSEID!</h1><br>
+          <p>
+            YOUSEID!は<br>
+            古着好きのための<br>
+            相互支援サイトです。</p><br>
+
+          <p>
+            userの皆さんは<br>
+            shopが投稿する商品の<br>
+            閲覧はもちろん<br>
+            来店予約まで行えます。
+          </p><br>
+
+          <p>
+            shopの皆さんは<br>
+            自由に商品の画像を、<br>
+            upし、取り置きや<br>
+            来店予約の確認を<br>
+            行えます。<br>
+          </p>
+
+          <p>
+            新しい生活様式に向け<br>
+            是非本サイトを<br>
+            ご利用ください!!
+          </p>
+        </div>
+
+        <div class="col-2"></div>
+        <div class="col-5">
+          <div class="devise-box">
+            <div class="text-center user-box">
+              <h5>userの方はこちらから</h5><br>
+              <%= link_to "新規登録", new_user_registration_path, class: "btn btn-success" %>
+              <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary" %>
+            </div><br>
+            <div class="text-center shop-box">
+              <h5>shopの方はこちらから</h5><br>
+              <%= link_to "新規登録", new_shop_registration_path, class: "btn btn-success" %>
+              <%= link_to "ログイン", new_shop_session_path, class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
