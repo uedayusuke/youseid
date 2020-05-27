@@ -20,10 +20,22 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+/* topページ */
+/* 上部空白 */
 .box {
 	margin-top: 70px;
 }
 
 .devise-box {
 	margin-top: 70px;
+}
+
+/* aboutページ */
+/* 背景色後日変更 */
+.theme-box {
+	background-color: green;
+}
+
+.howto-box {
+	background-color: green;
 }
