@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <%# ナビゲーションバー作るまで一旦これで %>
+    <%= link_to "userログアウト", destroy_user_session_path, method: :delete, :style=>"color:black;" %>
+    <%= link_to "shopログアウト", destroy_shop_session_path, method: :delete, :style=>"color:black;" %>
     <%= yield %>
   </body>
 </html>
