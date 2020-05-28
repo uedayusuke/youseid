@@ -1,26 +1,57 @@
-<h2>Log in</h2>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-8 mt-4">
+      <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+        <%# メールアドレス入力 %>
+        <div class="row">
+          <div class="col-5 offset-2">
+            <%= f.label :email %>
+          </div>
+          <div class="col">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+        </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <%# パスワード入力 %>
+        <div class="row">
+          <div class="col-5 offset-2">
+            <%= f.label :password %>
+          </div>
+          <div class="col">
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </div>
+        </div>
+
+        <%# チェックボックス %>
+        <div class="row">
+          <div class="col-5 offset-2"></div>
+          <div class="col">
+            <% if devise_mapping.rememberable? %>
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col text-center mt-2 actions">
+            <%= f.submit "Log in", value: "ログイン", class: "btn btn-primary" %>
+          </div>
+        </div>
+
+      <% end %>
+
+      <div class="row">
+        <div class="col text-right mt-2">
+          <%= render "users/shared/links" %>
+        </div>
+      </div>
+
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="col"></div>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
