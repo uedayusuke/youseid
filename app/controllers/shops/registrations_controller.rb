@@ -59,4 +59,9 @@ class Shops::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  #新規会員登録後のリダイレクト先をマイページに変更
+  def after_sign_up_path_for(resource)
+    admin_shop_path
+  end
 end
