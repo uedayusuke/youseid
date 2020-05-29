@@ -47,6 +47,8 @@ gem 'font-awesome-rails'
 gem 'faker'
 
 gem "activestorage", ">= 5.2.4.3"
+gem "activesupport", ">= 5.2.4.3"
+gem "actionpack", ">= 5.2.4.3"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
