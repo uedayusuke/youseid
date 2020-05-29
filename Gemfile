@@ -47,6 +47,8 @@ gem 'font-awesome-rails'
 gem 'faker'
 
 gem "activestorage", ">= 5.2.4.3"
+gem "activesupport", ">= 5.2.4.3"
+gem "actionpack", ">= 5.2.4.3"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -79,3 +81,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+#deployに使用
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
