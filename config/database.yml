@@ -23,7 +23,7 @@ test:
 #deployの為編集
 production:
   <<: *default
-  database: <%= ENV['youseid!'] %>
+  database: <%= ENV['youseid'] %>
   adapter: mysql2
   encoding: utf8mb4
   charset: utf8mb4
