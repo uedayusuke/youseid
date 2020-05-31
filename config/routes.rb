@@ -49,7 +49,6 @@ Rails.application.routes.draw do
 
   #shopサイト
   namespace :admin do
-    #idを割り振る必要がないため、単数形resourceに変更(5/26)
     resource :shop, only: [:show, :edit, :update, :destroy] do
       collection do
         get 'cancel'
