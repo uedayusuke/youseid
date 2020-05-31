@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root 'public/users#top'
   put '/user' => 'public/users#destroy'
   scope module: :public do
+    #idが必要ないと考えた為、単数形resource
     resource :user, only: [:show, :edit, :update] do
       collection do
         get 'cancel'
@@ -49,6 +50,7 @@ Rails.application.routes.draw do
 
   #shopサイト
   namespace :admin do
+    #idが必要ないと考えた為、単数形resource
     resource :shop, only: [:show, :edit, :update, :destroy] do
       collection do
         get 'cancel'
