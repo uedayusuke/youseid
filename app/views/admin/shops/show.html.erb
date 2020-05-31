@@ -1,2 +1,48 @@
-<h1>Admin::Shops#show</h1>
-<p>Find me in app/views/admin/shops/show.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col-8 offset-2 mt-5">
+			<h2>マイページ</h2>
+			<br>
+			<h5>shop情報</h5>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-6 offset-3 mt-4">
+			<table class="table table-borderd table-hover">
+				<tbody>
+					<tr>
+						<th>アカウント名</th>
+						<td>
+							<%= @shop.name %>
+						</td>
+					</tr>
+					<tr>
+						<th>メールアドレス</th>
+						<td>
+							<%= @shop.email %>
+						</td>
+					</tr>
+					<tr>
+						<th>郵便番号</th>
+						<td>
+							<%= @shop.postal_code %>
+						</td>
+					</tr>
+					<tr>
+						<th>住所</th>
+						<td>
+							<%= @shop.address %>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-6 offset-3 text-right">
+			<%= link_to "編集", edit_admin_shop_path, class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
