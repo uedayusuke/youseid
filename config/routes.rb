@@ -33,18 +33,17 @@ Rails.application.routes.draw do
       resource :fovorite, only: [:create, :destroy]
     end
 
-    #shop_idが必要だった為、contactをネスト(6/1)
+    #shop_idが必要だった為、contact/bookingをネスト(6/1)
     resources :shops, only: [:index, :show] do
       resource :contacts, only: [:new, :create] do
         collection do
           get 'finish'
         end
       end
-    end
-
-    resources :bookings, only: [:new, :create] do
-      collection do
-        get 'finish'
+      resources :bookings, only: [:new, :create] do
+        collection do
+          get 'finish'
+        end
       end
     end
 
