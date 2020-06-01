@@ -1,2 +1,40 @@
-<h1>Public::Contacts#new</h1>
-<p>Find me in app/views/public/contacts/new.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+
+		<div class="col-8">
+			<div class="row">
+				<h2>お問い合わせフォーマット</h2>
+			</div>
+			<%# contactはshopにネストしている為、引数を配列で付与 %>
+			<%= form_for [@shop, @contact] do |f| %>
+				<div class="row mt-4">
+					<div class="col-3">
+						<%= "アカウント名" %>
+					</div>
+					<div class="col-9">
+						<%= current_user.name %>
+					</div>
+				</div>
+				<%# 問い合わせ内容記入 %>
+				<div class="row mt-4">
+					<div class="col-3">
+						<%= f.label :body, "お問い合わせ内容" %>
+					</div>
+					<div class="col-9">
+						<%= f.text_area :body, size: "40x5", placeholder: "お問い合わせ内容をお書きください" %>
+					</div>
+				</div>
+				<%# 問い合わせ内容登録　完了ページにリダイレクトする %>
+				<div class="row mt-4">
+					<div class="col-3"></div>
+					<div class="col-6 text-right">
+						<%= f.submit "送信", class: "btn btn-primary" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+
+		<div class="col"></div>
+	</div>
+</div>
