@@ -5,6 +5,7 @@ class Public::BookingsController < ApplicationController
   end
 
   def create
+  	#createでnew/saveを同時に行う
   	if Booking.create(create_params)
   		redirect_to finish_shop_bookings_path
   	else
@@ -18,6 +19,7 @@ class Public::BookingsController < ApplicationController
   private
 
   def create_params
+  	#paramsに含まれない値をmergeで補填し、関連づけ
   	params.require(:booking).permit(:datetime).merge(shop_id: params[:shop_id], user_id: current_user.id)
   end
 end

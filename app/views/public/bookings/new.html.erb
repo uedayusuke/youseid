@@ -20,12 +20,14 @@
 					<div class="col">
 						<%= f.label :datetime, "来店日時" %>
 					</div>
+					<%# datetime_lochal_fieldで日時の選択 %>
 					<div class="col">
 						<%= f.datetime_local_field :datetime %>
 					</div>
 				</div>
 				<div class="row mt-4">
 					<div class="col-10 text-right">
+						<%# 日時登録後来店予約完了ページに遷移 %>
 						<%= f.submit "送信", class: "btn btn-primary" %>
 					</div>
 				</div>
