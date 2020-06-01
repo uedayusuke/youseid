@@ -24,6 +24,10 @@ class Public::UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(current_user.id)
+    @user.destroy
+    #退会処理後、topページにリダイレクト
+    redirect_to root_path
   end
 
   private

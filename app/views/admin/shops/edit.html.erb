@@ -1,2 +1,64 @@
-<h1>Admin::Shops#edit</h1>
-<p>Find me in app/views/admin/shops/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-8 mt-4">
+      <h2>登録情報編集</h2>
+
+      <%# デフォルトのaction設定でuserサイトのshop詳細に遷移してしまうので、urlで保存先を指定 %>
+      <%= form_for(@shop, url: admin_shop_path) do |f| %>
+
+        <%# 店舗名登録 %>
+        <div class="row">
+          <div class="col-5 offset-2">
+            <%= f.label :name, "店舗名" %>
+          </div>
+          <div class="col">
+            <%= f.text_field :name, autofocus: true %>
+          </div>
+        </div>
+
+        <%# メールアドレス登録  %>
+        <div class="row">
+          <div class="col-5 offset-2">
+            <%= f.label :email, "メールアドレス" %>
+          </div>
+          <div class="col">
+            <%= f.email_field :email, autocomplete: "email" %>
+          </div>
+        </div>
+
+        <%# 郵便番号登録 %>
+        <div class="row">
+          <div class="col-5 offset-2">
+            <%= f.label :postal_code, "郵便番号" %>
+          </div>
+          <div class="col">
+            <%= f.text_field :postal_code %>
+          </div>
+        </div>
+
+        <%# 住所登録 %>
+        <div class="row">
+          <div class="col-5 offset-2">
+            <%= f.label :address, "住所" %>
+          </div>
+          <div class="col">
+            <%= f.text_area :address %>
+          </div>
+        </div>
+
+
+        <div class="row actions">
+          <div class="col text-right mt-2">
+            <%# 変更内容をupdate、マイページにリダイレクト %>
+            <%= f.submit "変更", class: "btn btn-success" %>
+            <%# 退会ページに遷移 %>
+            <%= link_to "退会", cancel_admin_shop_path, class: "btn btn-danger" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

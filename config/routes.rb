@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root 'public/users#top'
   put '/user' => 'public/users#destroy'
   scope module: :public do
+    #idが必要ないと考えた為、単数形resource
     resource :user, only: [:show, :edit, :update] do
       collection do
         get 'cancel'
@@ -32,24 +33,25 @@ Rails.application.routes.draw do
       resource :fovorite, only: [:create, :destroy]
     end
 
-    resources :shops, only: [:index, :show]
-
-    resources :bookings, only: [:new, :create] do
-      collection do
-        get 'finish'
+    #shop_idが必要だった為、contact/bookingをネスト(6/1)
+    resources :shops, only: [:index, :show] do
+      resource :contacts, only: [:new, :create] do
+        collection do
+          get 'finish'
+        end
+      end
+      resources :bookings, only: [:new, :create] do
+        collection do
+          get 'finish'
+        end
       end
     end
 
-    resource :contacts, only: [:new, :create] do
-      collection do
-        get 'finish'
-      end
-    end
   end
 
   #shopサイト
   namespace :admin do
-    #idを割り振る必要がないため、単数形resourceに変更(5/26)
+    #idが必要ないと考えた為、単数形resource
     resource :shop, only: [:show, :edit, :update, :destroy] do
       collection do
         get 'cancel'

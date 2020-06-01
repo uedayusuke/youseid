@@ -1,2 +1,39 @@
-<h1>Public::Bookings#new</h1>
-<p>Find me in app/views/public/bookings/new.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+
+		<div class="col-8">
+			<div class="row">
+				<h2>来店予約フォーマット</h2>
+			</div>
+
+			<%= form_for [@shop, @booking] do |f| %>
+				<div class="row mt-4">
+					<div class="col">
+						<%= "アカウント名" %>
+					</div>
+					<div class="col">
+						<%= current_user.name %>
+					</div>
+				</div>
+				<div class="row mt-4">
+					<div class="col">
+						<%= f.label :datetime, "来店日時" %>
+					</div>
+					<%# datetime_lochal_fieldで日時の選択 %>
+					<div class="col">
+						<%= f.datetime_local_field :datetime %>
+					</div>
+				</div>
+				<div class="row mt-4">
+					<div class="col-10 text-right">
+						<%# 日時登録後来店予約完了ページに遷移 %>
+						<%= f.submit "送信", class: "btn btn-primary" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+
+		<div class="col"></div>
+	</div>
+</div>

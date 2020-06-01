@@ -6,10 +6,13 @@ class PostImage < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :reservations, dependent: :destroy
 
+  #画像投稿メソッド
+  attachment :image
+
   #with_optionsを用いてvalidates付与
   with_options presence: true do |pi|
   	pi.validates :shop_id
-  	pi.validates :image_id
+  	pi.validates :image
   	pi.validates :title
   	pi.validates :body
   	pi.validates :price

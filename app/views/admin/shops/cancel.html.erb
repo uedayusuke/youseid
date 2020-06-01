@@ -1,2 +1,25 @@
-<h1>Admin::Shops#cancel</h1>
-<p>Find me in app/views/admin/shops/cancel.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col-10">
+			<%# 退会メッセージ %>
+			<div class="finish-message mt-5 text-center">
+				<h1>本当に退会しますか？</h1>
+				<br>
+				<p>
+					退会すると、会員登録情報や<br>
+					これまでの投稿等が全て削除されます。<br>
+					退会する場合は下記の退会するボタンをクリックしてください。
+				</p>
+			</div>
+
+			<div class="btns text-center">
+				<%# 退会せずに、マイページにリダイレクト %>
+				<%= link_to "退会しない", admin_shop_path, class: "btn btn-primary" %>
+				<%# 退会後、topページにリダイレクト %>
+				<%= link_to "退会する", "/shops", method: :delete, class: "btn btn-danger" %>
+			</div>
+		</div>
+		<div class="col"></div>
+	</div>
+</div>
