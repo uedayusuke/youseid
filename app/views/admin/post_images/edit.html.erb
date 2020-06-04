@@ -11,7 +11,7 @@
 				<%# 画像表示 %>
 				<div class="col">
 					<div class="row">
-						<%= attachment_image_tag @post_image, :image, :fill, 400, 400, format: "jpg", fallback: "logo.png", size:'300x300' %>
+						<%= attachment_image_tag @post_image, :image, :fill, 400, 400, format: "jpg", fallback: "no_image.png", size:'300x300' %>
 					</div>
 				</div>
 				<%# 画像ファイル、商品名、金額、紹介文投稿 %>
