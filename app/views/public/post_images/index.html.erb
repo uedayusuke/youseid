@@ -6,12 +6,14 @@
 			<% @post_images.each do |ps| %>
 				<div class="row mt-5">
 					<div class="card mx-auto">
+						<%# shop名クリックで、店舗詳細ページに遷移 %>
 						<div class="card-header">
 							<%= link_to shop_path(ps.shop.id), :style=>"color:black;" do %>
 								<%= ps.shop.name %>
 							<% end %>
 						</div>
 						<div class="card-image">
+							<%# 画像クリックで、投稿詳細ページに遷移 %>
 							<%= link_to post_image_path(ps.id), :style=>"color:black;" do %>
 								<%= attachment_image_tag ps, :image, format:"jpg", fallback: "no_image.png", size:'400' %>
 							<% end %>
@@ -21,10 +23,8 @@
 								<%= ps.title %>
 							</div>
 							<div class="card-text">
-								<div class="price">
-									<%= ps.price %>円
-								</div>
-								<div class="favorite">
+								<div>
+									<%# ログインしてるuserが、いいねしているか、していないか条件分岐 %>
 									<% if ps.favorited_by?(current_user) %>
 										<%= link_to post_image_favorite_path(ps.id), method: :delete do %>
 											<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
@@ -36,6 +36,8 @@
 										<% end %>
 										<%= ps.favorites.count %>いいね
 									<% end %>
+									<%# コメント件数を表示 %>
+									<%= ps.comments.count %>コメント
 								</div>
 							</div>
 						</div>

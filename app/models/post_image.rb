@@ -15,6 +15,7 @@ class PostImage < ApplicationRecord
   attachment :image
 
   #with_optionsを用いてvalidates付与
+  #user_idを追加
   with_options presence: true do |pi|
   	pi.validates :shop_id
     pi.validates :user_id
