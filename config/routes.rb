@@ -30,7 +30,7 @@ Rails.application.routes.draw do
         end
       end
       resource :comment, only: [:create]
-      resource :fovorite, only: [:create, :destroy]
+      resource :favorite, only: [:create, :destroy]
     end
 
     #shop_idが必要だった為、contact/bookingをネスト(6/1)
