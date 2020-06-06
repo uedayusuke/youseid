@@ -21,6 +21,6 @@ class Public::ContactsController < ApplicationController
 
   def create_params
   	#paramsに含まれない値をmergeで補填し、関連づけ
-  	params.require(:contact).permit(:body).merge(shop_id: params[:shop_id], user_id: current_user.id)
+  	params.require(:contact).permit(:body, :user_name, :user_email).merge(shop_id: params[:shop_id], user_id: current_user.id)
   end
 end

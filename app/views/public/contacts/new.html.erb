@@ -24,6 +24,11 @@
 					<div class="col-9">
 						<%= f.text_area :body, size: "40x5", placeholder: "お問い合わせ内容をお書きください" %>
 					</div>
+					<div>
+						<%# hidden_fieldを用いて、下記２項目を自動的に送信 %>
+						<%= f.hidden_field :user_name, value: current_user.name %>
+						<%= f.hidden_field :user_email, value: current_user.email %>
+					</div>
 				</div>
 				<%# 問い合わせ内容登録　完了ページにリダイレクトする %>
 				<div class="row mt-4">
