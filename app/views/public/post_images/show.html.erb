@@ -1,2 +1,120 @@
-<h1>Public::PostImages#show</h1>
-<p>Find me in app/views/public/post_images/show.html.erb</p>
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+
+		<div class="col-8 mt-5">
+			<%# 詳細表示 %>
+			<div class="row card mx-auto">
+				<div class="row no-gutters">
+					<div class="col">
+						<%= attachment_image_tag @post_image, :image, format:"jpg", fallback: "no_image.png", size:'350' %>
+					</div>
+					<div class="col">
+						<div>
+							 <h5>
+							 	<%= @post_image.shop.name %>
+							 </h5>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">
+								<%# ログインしてるuserが、いいねしているか、していないか条件分岐 %>
+								<% if @post_image.favorited_by?(current_user) %>
+									<%= link_to post_image_favorite_path(@post_image.id), method: :delete do %>
+										<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+									<% end %>
+									<%= @post_image.favorites.count %>いいね
+								<% else %>
+									<%= link_to post_image_favorite_path(@post_image.id), method: :post do %>
+										<i class="fa fa-heart-o" aria-hidden="true"></i>
+									<% end %>
+									<%= @post_image.favorites.count %>いいね
+								<% end %>
+								<%# コメント件数を表示 %>
+								<%= @post_image.comments.count %>コメント
+							</li>
+							<%# 商品名表示 %>
+							<li class="list-group-item">
+								<%= @post_image.title %>
+							</li>
+							<%# 金額表示 %>
+							<li class="list-group-item">
+								<%= @post_image.price %>円
+							</li>
+							<%# 紹介文表示 %>
+							<li class="list-group-item">
+								<%= @post_image.body %>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<%# 商品取り置きフォーム %>
+			<%# hidden_fieldで、ボタンを押すだけで下記項目がreservationsテーブルに保存される %>
+			<div class="row mt-3">
+				<div class="col text-right">
+					<%= form_for [@post_image, @reservation] do |f| %>
+						<%# 商品名 %>
+						<%= f.hidden_field :title, value: @post_image.title %>
+						<%# user名 %>
+						<%= f.hidden_field :user_name, value: current_user.name %>
+						<%# userメールアドレス %>
+						<%= f.hidden_field :user_email, value: current_user.email %>
+						<%# 取り置き完了ページに遷移 %>
+						<%= f.submit "お取り置き", class: "btn btn-success" %>
+					<% end %>
+				</div>
+			</div>
+
+			<%# コメント送信form %>
+			<div class="row mt-4">
+				<div class="col"></div>
+				<div class="col-10">
+					<div class="row">
+						<div class="col">
+							<%= form_for [@post_image, @comment] do |f| %>
+								<%= f.text_area :comment, class: "form-control", size: "10x5", placeholder: "コメントはこちらから" %>
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="col text-right">
+								<%= f.submit "送信する", class: "btn btn-primary" %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="col"></div>
+			</div>
+
+			<%# コメント一覧 %>
+			<div class="row my-4">
+				<div class="col">
+					<div class="table-responsive">
+						<table class="table">
+							<thead class="thead-light">
+								<tr>
+									<th>users</th>
+									<th>comments</th>
+								</tr>
+							</thead>
+							<% @post_image.comments.each do |pc| %>
+								<tbody>
+									<tr>
+										<td>
+											<%= pc.user.name %>
+										</td>
+										<td>
+											<%= pc.comment %>
+										</td>
+									</tr>
+								</tbody>
+							<% end %>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col"></div>
+	</div>
+</div>
