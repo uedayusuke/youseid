@@ -49,6 +49,23 @@
 				</div>
 			</div>
 
+			<%# 商品取り置きフォーム %>
+			<%# hidden_fieldで、ボタンを押すだけで下記項目がreservationsテーブルに保存される %>
+			<div class="row mt-3">
+				<div class="col text-right">
+					<%= form_for [@post_image, @reservation] do |f| %>
+						<%# 商品名 %>
+						<%= f.hidden_field :title, value: @post_image.title %>
+						<%# user名 %>
+						<%= f.hidden_field :user_name, value: current_user.name %>
+						<%# userメールアドレス %>
+						<%= f.hidden_field :user_email, value: current_user.email %>
+						<%# 取り置き完了ページに遷移 %>
+						<%= f.submit "お取り置き", class: "btn btn-success" %>
+					<% end %>
+				</div>
+			</div>
+
 			<%# コメント送信form %>
 			<div class="row mt-4">
 				<div class="col"></div>
@@ -72,15 +89,15 @@
 			<%# コメント一覧 %>
 			<div class="row my-4">
 				<div class="col">
-					<% @post_image.comments.each do |pc| %>
-						<div class="table-responsive">
-							<table class="table">
-								<thead class="thead-light">
-									<tr>
-										<th>users</th>
-										<th>comments</th>
-									</tr>
-								</thead>
+					<div class="table-responsive">
+						<table class="table">
+							<thead class="thead-light">
+								<tr>
+									<th>users</th>
+									<th>comments</th>
+								</tr>
+							</thead>
+							<% @post_image.comments.each do |pc| %>
 								<tbody>
 									<tr>
 										<td>
@@ -91,9 +108,9 @@
 										</td>
 									</tr>
 								</tbody>
-							</table>
-						</div>
-					<% end %>
+							<% end %>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

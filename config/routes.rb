@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     end
 
     resources :post_images, only: [:index, :show] do
-      resource :reservation, only: [:create] do
+      resource :reservations, only: [:create] do
         collection do
           get 'finish'
         end
