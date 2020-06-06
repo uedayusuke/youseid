@@ -20,6 +20,6 @@ class Public::BookingsController < ApplicationController
 
   def create_params
   	#paramsに含まれない値をmergeで補填し、関連づけ
-  	params.require(:booking).permit(:datetime).merge(shop_id: params[:shop_id], user_id: current_user.id)
+  	params.require(:booking).permit(:datetime, :user_name, :user_email).merge(shop_id: params[:shop_id], user_id: current_user.id)
   end
 end
