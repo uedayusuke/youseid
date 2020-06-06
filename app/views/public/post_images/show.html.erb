@@ -60,6 +60,8 @@
 						<%= f.hidden_field :user_name, value: current_user.name %>
 						<%# userメールアドレス %>
 						<%= f.hidden_field :user_email, value: current_user.email %>
+						<%# shop_id %>
+						<%= f.hidden_field :shop_id, value: @post_image.shop_id %>
 						<%# 取り置き完了ページに遷移 %>
 						<%= f.submit "お取り置き", class: "btn btn-success" %>
 					<% end %>

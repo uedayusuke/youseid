@@ -14,6 +14,6 @@ class Public::ReservationsController < ApplicationController
 	private
 
 	def reservation_params
-		params.require(:reservation).permit(:title, :user_name, :user_email)
+		params.require(:reservation).permit(:title, :user_name, :user_email, :shop_id)
 	end
 end
