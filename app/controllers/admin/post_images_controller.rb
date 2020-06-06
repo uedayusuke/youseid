@@ -16,13 +16,20 @@ class Admin::PostImagesController < ApplicationController
   end
 
   def show
+    #該当の投稿を取得
     @post_image = PostImage.find(params[:id])
+    #ログインしているshopと該当の投稿をしたshopを同意に
+    @post_image.shop.id = current_shop.id
   end
 
   def edit
+    @post_image = PostImage.find(params[:id])
   end
 
   def update
+    @post_image = PostImage.find(params[:id])
+    @post_image.update(post_image_params)
+    redirect_to admin_post_image_path
   end
 
   private

@@ -11,7 +11,7 @@
 				<%# 画像表示 %>
 				<div class="col">
 					<div class="row">
-						<%= attachment_image_tag @post_image, :image, :fill, 400, 400, format: "jpg", fallback: "logo.png", size:'300x300' %>
+						<%= attachment_image_tag @post_image, :image, :fill, 400, 400, format: "jpg", fallback: "no_image.png", size:'300x300' %>
 					</div>
 				</div>
 				<%# 画像ファイル、商品名、金額、紹介文投稿 %>
@@ -49,8 +49,10 @@
 							<div class="col-4">
 								<%= f.label :body, "紹介文" %>
 							</div>
+						</div>
+						<div class="row">
 							<div class="col-8">
-								<%= f.text_area :body %>
+								<%= f.text_area :body, size: "40x5" %>
 							</div>
 						</div>
 						<%# 投稿ボタン %>
