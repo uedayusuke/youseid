@@ -6,5 +6,6 @@ class Public::PostImagesController < ApplicationController
   def show
   	@post_image = PostImage.find(params[:id])
   	@reservation = Reservation.new
+  	@comment = Comment.new
   end
 end

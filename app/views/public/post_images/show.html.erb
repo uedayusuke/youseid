@@ -3,6 +3,7 @@
 		<div class="col"></div>
 
 		<div class="col-8 mt-5">
+			<%# 詳細表示 %>
 			<div class="row card mx-auto">
 				<div class="row no-gutters">
 					<div class="col">
@@ -48,9 +49,51 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col text-right">
-					<%# form_for取り置機能追加 %>
+			<%# コメント送信form %>
+			<div class="row mt-4">
+				<div class="col"></div>
+				<div class="col-10">
+					<div class="row">
+						<div class="col">
+							<%= form_for [@post_image, @comment] do |f| %>
+								<%= f.text_area :comment, class: "form-control", size: "10x5", placeholder: "コメントはこちらから" %>
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="col text-right">
+								<%= f.submit "送信する", class: "btn btn-primary" %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<div class="col"></div>
+			</div>
+
+			<%# コメント一覧 %>
+			<div class="row my-4">
+				<div class="col">
+					<% @post_image.comments.each do |pc| %>
+						<div class="table-responsive">
+							<table class="table">
+								<thead class="thead-light">
+									<tr>
+										<th>users</th>
+										<th>comments</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<%= pc.user.name %>
+										</td>
+										<td>
+											<%= pc.comment %>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					<% end %>
 				</div>
 			</div>
 		</div>

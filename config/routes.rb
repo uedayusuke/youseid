@@ -29,7 +29,7 @@ Rails.application.routes.draw do
           get 'finish'
         end
       end
-      resource :comment, only: [:create]
+      resource :comments, only: [:create]
       resource :favorite, only: [:create, :destroy]
     end
 
