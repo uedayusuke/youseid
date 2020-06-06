@@ -24,6 +24,11 @@
 					<div class="col">
 						<%= f.datetime_local_field :datetime %>
 					</div>
+					<div>
+						<%# hidden_fieldを用いて、下記２項目を自動的に送信 %>
+						<%= f.hidden_field :user_name, value: current_user.name %>
+						<%= f.hidden_field :user_email, value: current_user.email %>
+					</div>
 				</div>
 				<div class="row mt-4">
 					<div class="col-10 text-right">
