@@ -18,7 +18,7 @@ class PostImage < ApplicationRecord
   #user_idを追加
   with_options presence: true do |pi|
   	pi.validates :shop_id
-    pi.validates :user_id
+    #pi.validates :user_id
   	pi.validates :image
   	pi.validates :title
   	pi.validates :body
