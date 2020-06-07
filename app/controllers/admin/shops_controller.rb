@@ -1,6 +1,7 @@
 class Admin::ShopsController < ApplicationController
   def show
   	@shop = Shop.find(current_shop.id)
+    @post_images = PostImage.where(shop_id: current_shop.id)
   end
 
   def edit
