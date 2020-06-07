@@ -8,11 +8,11 @@ class Admin::PostImagesController < ApplicationController
     #ログインしている人以外は投稿できない
     @post_image.shop_id = current_shop.id
     #登録内容に不備がある場合はrenderで新規投稿ページに戻る
-    @post_image.save
+    if @post_image.save
       redirect_to admin_post_image_path(@post_image.id)
-    #else
-      #render :new
-    #send
+    else
+      render :new
+    end
   end
 
   def show
