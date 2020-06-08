@@ -1,49 +1,70 @@
 <div class="container">
 	<div class="row">
-		<div class="col-8 offset-2 mt-5">
-			<h2>店舗詳細</h2>
-			<br>
-			<h5>shop情報</h5>
-		</div>
-	</div>
+		<div class="col"></div>
 
-	<div class="row">
-		<div class="col-6 offset-3 mt-4">
-			<table class="table table-bordered table-hover">
-				<tbody>
-					<tr>
-						<th>アカウント名</th>
-						<td>
-							<%= @shop.name %>
-						</td>
-					</tr>
-					<tr>
-						<th>メールアドレス</th>
-						<td>
-							<%= @shop.email %>
-						</td>
-					</tr>
-					<tr>
-						<th>郵便番号</th>
-						<td>
-							<%= @shop.postal_code %>
-						</td>
-					</tr>
-					<tr>
-						<th>住所</th>
-						<td>
-							<%= @shop.address %>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
+		<div class="col-8">
+			<div class="row mt-5">
+				<div class="col">
+					<h2>店舗詳細</h2>
+					<br>
+					<h5>shop情報</h5>
+				</div>
+			</div>
 
-	<div class="row">
-		<div class="col-6 offset-3 text-right">
-			<%= link_to "来店予約", new_shop_booking_path(@shop.id), class: "btn btn-primary" %>
-			<%= link_to "お問い合わせ", new_shop_contacts_path(@shop.id), class: "btn btn-success" %>
+			<%# 店舗情報 %>
+			<div class="row mt-4">
+				<%# 店舗profile画像 %>
+				<div class="col">
+					<%= attachment_image_tag @shop, :profile_image, format: "jpg", fallback: "no_image.png", size:'230', class: "rounded-circle border" %>
+				</div>
+
+				<%# 店舗詳細情報 %>
+				<div class="col">
+					<table class="table table-bordered table-hover">
+						<tbody>
+							<tr>
+								<th>アカウント名</th>
+								<td>
+									<%= @shop.name %>
+								</td>
+							</tr>
+							<tr>
+								<th>メールアドレス</th>
+								<td>
+									<%= @shop.email %>
+								</td>
+							</tr>
+							<tr>
+								<th>郵便番号</th>
+								<td>
+									<%= @shop.postal_code %>
+								</td>
+							</tr>
+							<tr>
+								<th>住所</th>
+								<td>
+									<%= @shop.address %>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col text-right">
+					<%# それぞれ来店予約フォーマット、お問い合わせフォーマットに遷移 %>
+					<%= link_to "来店予約", new_shop_booking_path(@shop.id), class: "btn btn-primary" %>
+					<%= link_to "お問い合わせ", new_shop_contacts_path(@shop.id), class: "btn btn-success" %>
+				</div>
+			</div>
+
+			<%# 投稿一覧 %>
+			<div class="row border-top mt-4">
+				
+			</div>
 		</div>
+
+		<div class="col"></div>
 	</div>
 </div>
