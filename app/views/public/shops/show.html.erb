@@ -61,7 +61,14 @@
 
 			<%# 投稿一覧 %>
 			<div class="row border-top mt-4">
-				
+				<% @shop.post_images.each do |sp| %>
+					<div class="col-4 mt-4">
+						<%# それそれの投稿詳細ページに遷移 %>
+						<%= link_to post_image_path(sp.id) do %>
+							<%= attachment_image_tag sp, :image, format:"jpg", fallback: "no_image.png", size:'230' %>
+						<% end %>
+					</div>
+				<% end %>
 			</div>
 		</div>
 
