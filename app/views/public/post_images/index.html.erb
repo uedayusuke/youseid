@@ -6,9 +6,10 @@
 			<% @post_images.each do |ps| %>
 				<div class="row mt-5">
 					<div class="card mx-auto">
-						<%# shop名クリックで、店舗詳細ページに遷移 %>
+						<%# shop名/profile画像クリックで、店舗詳細ページに遷移 %>
 						<div class="card-header">
 							<%= link_to shop_path(ps.shop.id), :style=>"color:black;" do %>
+								<%= attachment_image_tag ps.shop, :profile_image, format:"jpg", fallback: "no_image.png", size: "40", class: "rounded-circle" %>
 								<%= ps.shop.name %>
 							<% end %>
 						</div>
