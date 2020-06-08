@@ -8,6 +8,10 @@ class Shop < ApplicationRecord
   has_many :contacts, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :reservations, dependent: :destroy
+
+  #画像投稿メソッド
+  attachment :profile_image
+
   #with_optionsを用いてvalidates付与
   with_options presence: true do |s|
   	s.validates :name
