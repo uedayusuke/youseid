@@ -7,42 +7,104 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-6 offset-3 mt-4">
-			<table class="table table-bordered table-hover">
-				<tbody>
-					<tr>
-						<th>アカウント名</th>
-						<td>
-							<%= @shop.name %>
-						</td>
-					</tr>
-					<tr>
-						<th>メールアドレス</th>
-						<td>
-							<%= @shop.email %>
-						</td>
-					</tr>
-					<tr>
-						<th>郵便番号</th>
-						<td>
-							<%= @shop.postal_code %>
-						</td>
-					</tr>
-					<tr>
-						<th>住所</th>
-						<td>
-							<%= @shop.address %>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+	<%# 店舗情報 %>
+	<div class="row mt-4">
+
+		<%# shop/profile画像 %>
+		<div class="col-5 offset-1 text-center">
+			<%= attachment_image_tag @shop, :profile_image, format: "jpg", fallback: "no_image.png", size:'230', class: "rounded-circle border"  %>
+		</div>
+
+		<%# shop/詳細 %>
+		<div class="col-5">
+			<div class="row">
+				<div class="col">
+					<table class="table table-bordered table-hover">
+						<tbody>
+							<tr>
+								<th>アカウント名</th>
+								<td>
+									<%= @shop.name %>
+								</td>
+							</tr>
+							<tr>
+								<th>メールアドレス</th>
+								<td>
+									<%= @shop.email %>
+								</td>
+							</tr>
+							<tr>
+								<th>郵便番号</th>
+								<td>
+									<%= @shop.postal_code %>
+								</td>
+							</tr>
+							<tr>
+								<th>住所</th>
+								<td>
+									<%= @shop.address %>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<%# 編集ページに遷移 %>
+			<div class="row">
+				<div class="col text-right">
+					<%= link_to "編集", edit_admin_shop_path, class: "btn btn-primary" %>
+				</div>
+			</div>
+		</div>
+
+		<div class="col"></div>
+	</div>
+
+	<%# 取り置き商品一覧ページに遷移 %>
+	<div class="row mt-4">
+		<div class="col-3 offset-3 text-right">
+			<h6>取り置き商品</h6>
+		</div>
+		<div class="col-3 text-left">
+			<%= link_to "取り置き一覧", admin_reservations_path, class: "btn btn-success" %>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-6 offset-3 text-right">
-			<%= link_to "編集", edit_admin_shop_path, class: "btn btn-primary" %>
+	<%# 来店予約一覧ページに遷移 %>
+	<div class="row mt-4">
+		<div class="col-3 offset-3 text-right">
+			<h6>来店予約</h6>
 		</div>
+		<div class="col-3">
+			<%= link_to "来店予約一覧", admin_bookings_path, class: "btn btn-success" %>
+		</div>
+	</div>
+
+	<%# お問い合わせ一覧ページに遷移 %>
+	<div class="row mt-4">
+		<div class="col-3 offset-3 text-right">
+			<h6>お問い合わせ</h6>
+		</div>
+		<div class="col-3">
+			<%= link_to "問い合わせ一覧", admin_contacts_path, class: "btn btn-success" %>
+		</div>
+	</div>
+
+	<div class="row mt-4">
+		<div class="col text-right">
+			<%= link_to "新規投稿", new_admin_post_image_path, class: "btn btn-primary" %>
+		</div>
+	</div>
+
+	<%# 投稿一覧 %>
+	<div class="row border-top mt-1">
+		<% @post_images.each do |ps| %>
+			<div class="col mt-4">
+				<%= link_to admin_post_image_path(ps.id) do %>
+					<%= attachment_image_tag ps, :image, format:"jpg", fallback: "no_image.png", size:'250' %>
+				<% end %>
+			</div>
+		<% end %>
 	</div>
 </div>
