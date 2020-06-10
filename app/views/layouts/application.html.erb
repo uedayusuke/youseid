@@ -10,9 +10,64 @@
   </head>
 
   <body>
-    <%# ナビゲーションバー作るまで一旦これで %>
-    <%= link_to "userログアウト", destroy_user_session_path, method: :delete, :style=>"color:black;" %>
-    <%= link_to "shopログアウト", destroy_shop_session_path, method: :delete, :style=>"color:black;" %>
+    <header id="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%# ロゴのリンク先もECサイトと管理人サイトで分けます。%>
+            <% if request.url.include?('admin') %>  <%# 今のURLに'admin'が入っているかどうかでどちらのサイトなのかを識別 %>
+              <%# 管理人サイトの場合 %>
+              <a class="navbar-brand" href="/admin/shop">
+                <%= image_tag 'logo.png', :size => '65' %>
+              </a>
+            <% else %>
+            <%# ECサイトの場合 %>
+              <a class="navbar-brand" href="/">
+                <%= image_tag 'logo.png', :size => '65' %>
+              </a>
+            <% end %>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <%# 今のURLにadminが入っているかどうかでどちらのサイトなのかを識別 %>
+          <% if request.url.include?('admin') %>
+            <%# 管理者サイト かつ 管理人でログインしている場合 %>
+            <% if shop_signed_in? %>
+              <li class="nav-item nav-link">
+                <%= link_to "マイページ", admin_shop_path, :style=>"color:black;" %>
+              </li>
+              <li class="nav-item nav-link">
+                <%= link_to "新規投稿", new_admin_post_image_path, :style=>"color:black;" %>
+              </li>
+              <li class="nav-item nav-link">
+                <%= link_to "ログアウト", destroy_shop_session_path, method: :delete, :style=>"color:black;" %>
+              </li>
+            <%# 管理者サイト かつ 管理人でログインしていない場合 %>
+            <% else %>
+              <li class="nav-item nav-link">
+                <%= link_to "about", about_user_path, :style=>"color:black;" %>
+              </li>
+            <% end %>
+          <%# ECサイト かつ 会員でログインしている場合 %>
+          <% elsif user_signed_in? %>
+            <li class="nav-item nav-link">
+              <%= link_to "マイページ", "/user", :style=>"color:black;" %>
+            </li>
+            <li class="nav-item nav-link">
+              <%= link_to "商品一覧", post_images_path, :style=>"color:black;" %>
+            </li>
+            <li class="nav-item nav-link">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :style=>"color:black;" %>
+            </li>
+          <%# ECサイト かつ 会員でログインしていない場合 %>
+          <% else %>
+            <li class="nav-item nav-link">
+              <%= link_to "about", about_user_path, :style=>"color:black;" %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </header><!-- /header -->
     <%= yield %>
   </body>
 </html>
