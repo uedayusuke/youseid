@@ -39,3 +39,8 @@
 ### ER図
 <https://drive.google.com/file/d/1x3OaieLHF7BLHowYvVOulzA-KqKyjgOX/view?usp=sharing>
 
+### WIRE FLAME
+#### USER
+<https://drive.google.com/file/d/1OHcncHjQPqICrfi5u7pI8dVDeM9SLMDf/view?usp=sharing>
+#### SHOP
+<https://drive.google.com/file/d/1K2ciGiQy6ZvP1mzKSRKqPvqz2iuKzSXb/view?usp=sharing>
