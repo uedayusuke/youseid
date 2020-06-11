@@ -22,7 +22,7 @@
 ### 主な利用シーン
 店舗は、利用者に向けて新商品のアップ、企画のPR等を発信、<br>
 利用者は投稿された商品を閲覧し、取り置き,また来店予約が可能。
-
+<br>
 ## 設計書
 ### 機能一覧
 <https://drive.google.com/open?id=1A1Ceocc2CZH8rI5HBQFOK2NO8amF8DbeKfP01_A0oZg>
@@ -35,4 +35,7 @@
 <https://drive.google.com/file/d/1JiXDl6jun1hLoOzNlm3Hj4x-WLfxyZ4i/view?usp=sharing>
 #### SHOP
 <https://drive.google.com/file/d/1vXzjUjSPH5poS1fyEiZY0fFP49ybVHCn/view?usp=sharing>
+
+### ER図
+<https://drive.google.com/file/d/1x3OaieLHF7BLHowYvVOulzA-KqKyjgOX/view?usp=sharing>
 
