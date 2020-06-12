@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="row mt-5">
+		<div class="col"></div>
+
+		<div class="col-8">
+			<div class="row">
+				<h2>お問い合わせ一覧</h2>
+			</div>
+
+			<div class="row mt-4">
+				<div class="col">
+					<div class="table-resposive">
+						<table class="table table-bordered table-hover">
+							<thead class="thead-light">
+								<tr>
+									<th>お問い合わせ日</th>
+									<th>user名</th>
+									<th>内容</th>
+									<th>user/email</th>
+								</tr>
+							</thead>
+							<% @contacts.each do |c| %>
+								<tbody>
+									<tr>
+										<td>
+											<%= c.created_at.strftime("%Y年%m月%d日") %>
+										</td>
+										<td>
+											<%= c.user_name %>
+										</td>
+										<td>
+											<%= c.body %>
+										</td>
+										<td>
+											<%= c.user_email %>
+										</td>
+									</tr>
+								</tbody>
+							<% end %>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col"></div>
+	</div>
+</div>
