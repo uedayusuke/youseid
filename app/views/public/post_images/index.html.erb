@@ -24,11 +24,13 @@
 								<%= ps.title %>
 							</div>
 							<div class="card-text">
-								<div class="favorite_<%= ps.id %>">
+								<td class="favorite_<%= ps.id %>">
 									<%= render "public/post_images/favorite", ps: ps %>
+								</td>
+								<td>
 									<%# コメント件数を表示 %>
 									<%= ps.comments.count %>コメント
-								</div>
+								</td>
 							</div>
 						</div>
 					</div>
