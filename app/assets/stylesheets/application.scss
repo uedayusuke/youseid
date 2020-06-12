@@ -20,6 +20,10 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+body {
+	background-color: rgba( 254, 234, 133, 0.2);
+}
+
 /* topページ */
 /* 上部空白 */
 .box {
@@ -28,6 +32,16 @@
 
 .devise-box {
 	margin-top: 70px;
+}
+
+.user-box {
+	background-color: rgba( 95, 158, 160, 0.8);
+	border-radius: 3%;
+}
+
+.shop-box {
+	background-color: rgba( 183, 134, 11, 0.7);
+	border-radius: 3%;
 }
 
 /* aboutページ */
