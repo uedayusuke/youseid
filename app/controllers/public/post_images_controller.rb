@@ -1,6 +1,7 @@
 class Public::PostImagesController < ApplicationController
   def index
-  	@post_images = PostImage.all
+  	#.order(created_at: :desc)で新着順に
+  	@post_images = PostImage.all.order(created_at: :desc)
   end
 
   def show
