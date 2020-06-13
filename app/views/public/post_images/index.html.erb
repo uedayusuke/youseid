@@ -23,14 +23,14 @@
 							<div class="card-title">
 								<%= ps.title %>
 							</div>
-							<div class="card-text">
-								<td class="favorite_<%= ps.id %>">
+							<div class="card-text d-flex flex-row">
+								<div class="favorite_<%= ps.id %>">
 									<%= render "public/post_images/favorite", ps: ps %>
-								</td>
-								<td>
+								</div>
+								<div class="ml-1">
 									<%# コメント件数を表示 %>
 									<%= ps.comments.count %>コメント
-								</td>
+								</div>
 							</div>
 						</div>
 					</div>

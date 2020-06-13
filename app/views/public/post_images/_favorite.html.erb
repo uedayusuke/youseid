@@ -1,11 +1,12 @@
 <%# ログインしてるuserが、いいねしているか、していないか条件分岐 %>
 <% if ps.favorited_by?(current_user) %>
-	<%= link_to post_image_favorites_path(ps.id), method: :delete, remote: true do %>
+	<%# "text-decoration: none"で下線を無効化 %>
+	<%= link_to post_image_favorites_path(ps.id), method: :delete, remote: true, :style=>"text-decoration: none;" do %>
 		<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
 	<% end %>
 	<%= ps.favorites.count %>いいね
 <% else %>
-	<%= link_to post_image_favorites_path(ps.id), method: :post, remote: true do %>
+	<%= link_to post_image_favorites_path(ps.id), method: :post, remote: true, :style=>"text-decoration: none;" do %>
 		<i class="fa fa-heart-o" aria-hidden="true"></i>
 	<% end %>
 	<%= ps.favorites.count %>いいね
