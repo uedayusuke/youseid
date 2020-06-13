@@ -92,14 +92,14 @@
 									<th>comments</th>
 								</tr>
 							</thead>
-							<% @post_image.comments.each do |pc| %>
+							<% @comments.each do |co| %>
 								<tbody>
 									<tr>
 										<td>
-											<%= pc.user.name %>
+											<%= co.user.name %>
 										</td>
 										<td>
-											<%= pc.comment %>
+											<%= co.comment %>
 										</td>
 									</tr>
 								</tbody>

@@ -8,5 +8,6 @@ class Public::PostImagesController < ApplicationController
   	@post_image = PostImage.find(params[:id])
   	@reservation = Reservation.new
   	@comment = Comment.new
+  	@comments = @post_image.comments.order(created_at: :desc)
   end
 end
