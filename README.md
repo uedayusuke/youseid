@@ -30,6 +30,8 @@
 ### 要件定義書
 <https://docs.google.com/document/d/1kbfsQcj0bpmdJSiK-tvOAmk8q-SxBlYHvgk_fP0BgVU/edit?usp=sharing>
 
+### スライド
+<https://drive.google.com/file/d/1AanVgCYBou5TwYkGiB63XcNMr1QPZ2ZT/view?usp=sharing>
 
 ### UI Flows
 #### USER
