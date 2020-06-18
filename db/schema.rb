@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_06_124713) do
+ActiveRecord::Schema.define(version: 2020_06_18_081331) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id"
@@ -83,6 +83,13 @@ ActiveRecord::Schema.define(version: 2020_06_06_124713) do
     t.text "address"
     t.index ["email"], name: "index_shops_on_email", unique: true
     t.index ["reset_password_token"], name: "index_shops_on_reset_password_token", unique: true
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.integer "post_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
