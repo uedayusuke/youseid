@@ -14,14 +14,9 @@
 						<%= attachment_image_tag @post_image, :image, format: "jpg", fallback: "no_image.png", size: "300" %>
 					</div>
 					<h6 class="mt-2">
-						<span class="badge badge-info">
-							<%= "ラベル" %>
-						</span>
-					</h6>
-					<h6 class="mt-2">
 						<% @post_image.tags.each do |tag| %>
                 			<span class="badge badge-info">
-                				<% tag.name %>
+                				<%= tag.name %>
                 			</span>
               			<% end %>
 					</h6>
