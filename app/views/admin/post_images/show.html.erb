@@ -13,6 +13,7 @@
 					<div>
 						<%= attachment_image_tag @post_image, :image, format: "jpg", fallback: "no_image.png", size: "300" %>
 					</div>
+					<%# vision_apiを用いて画像を認識しタグづけ %>
 					<h6 class="mt-2">
 						<% @post_image.tags.each do |tag| %>
                 			<span class="badge badge-info">
