@@ -42,6 +42,8 @@
                         <%= f.submit "変更", class: "btn btn-success" %>
                         <%# 退会ページに遷移　退会は退会ページで行う為遷移のみ %>
                         <%= link_to "退会", cancel_user_path, class: "btn btn-danger" %>
+                        <%# 7/8マイページに遷移する戻るボタンを追加 %>
+                        <%= link_to "戻る", "/user", class: "btn btn-info" %>
                     </div>
                 </div>
 
