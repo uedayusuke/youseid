@@ -31,11 +31,13 @@
 						<%= f.hidden_field :user_email, value: current_user.email %>
 					</div>
 				</div>
-				<%# 問い合わせ内容登録　完了ページにリダイレクトする %>
 				<div class="row mt-4">
 					<div class="col-3"></div>
 					<div class="col-6 text-right">
+						<%# 問い合わせ内容登録　完了ページにリダイレクトする %>
 						<%= f.submit "送信", class: "btn btn-primary" %>
+						<%# 7/9 shop情報ページに遷移する"戻る"ボタンを追加 %>
+						<%= link_to "戻る", shop_path(@shop.id), class:"btn btn-info" %>
 					</div>
 				</div>
 			<% end %>
