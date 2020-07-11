@@ -2,6 +2,8 @@
 
 ## サイト概要
 古着に特化したファッションSNS兼ECサイト
+![logo_transparent](https://user-images.githubusercontent.com/62044723/87220444-b8267a80-c39e-11ea-8117-771540e69820.png)
+
 
 ### サイトテーマ
 複数の投稿者（古着屋オーナー）がSNS感覚で商品画像を投稿し、<br>
