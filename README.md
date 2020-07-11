@@ -1,4 +1,5 @@
-![logo_transparent](https://user-images.githubusercontent.com/62044723/87220444-b8267a80-c39e-11ea-8117-771540e69820.png)
+<img src="https://user-images.githubusercontent.com/62044723/87220444-b8267a80-c39e-11ea-8117-771540e69820.png" width="500px">
+
 # YOUSEID!
 
 ## サイト概要
