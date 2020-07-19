@@ -24,8 +24,10 @@
 
 /* topページ */
 .main-visual {
-	background-color: rgba( 95, 158, 160, 0.8);
-	height: 300px;
+	background-image: image-url("clothes.png");
+	background-size: cover;
+	background-position: center;
+	height: 450px;
 	width: 100%;
 }
 
