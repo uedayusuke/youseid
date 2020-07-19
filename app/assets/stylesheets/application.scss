@@ -23,6 +23,14 @@
 
 
 /* topページ */
+.main-visual {
+	background-image: image-url("clothes.png");
+	background-size: cover;
+	background-position: center;
+	height: 450px;
+	width: 100%;
+}
+
 /* 上部空白 */
 .box {
 	margin-top: 70px;
@@ -43,7 +51,14 @@
 }
 
 /* aboutページ */
-/* 背景色後日変更 */
+.about-visual {
+	background-image: image-url("shirt.png");
+	background-size: cover;
+	background-position: center;
+	height: 450px;
+	width: 100%;
+}
+
 .theme-box {
 	background-color: rgba( 95, 158, 160, 0.8);
 }
