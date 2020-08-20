@@ -51,6 +51,28 @@
 }
 
 /* aboutページ */
+#about-visual{
+	height: 510px;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}
+.clothes {
+	background-image: image-url("clothes.png")
+}
+.dot {
+	background-image: image-url("dot.png")
+}
+.jeans {
+	background-image: image-url("jeans.png")
+}
+.shirt {
+	background-image: image-url("shirt.png")
+}
+.stripe {
+	background-image: image-url("stripe.png")
+}
+
 .about-visual {
 	background-image: image-url("shirt.png");
 	background-size: cover;

@@ -45,6 +45,7 @@ gem 'momentjs-rails'
 gem 'font-awesome-rails'
 # ダミーデータ作成
 gem 'faker'
+gem "jquery-turbolinks"
 
 gem "activestorage", ">= 5.2.4.3"
 gem "activesupport", ">= 5.2.4.3"
